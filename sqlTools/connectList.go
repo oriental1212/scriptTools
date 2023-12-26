@@ -21,3 +21,12 @@ func ConnectDevMySQL() (db *gorm.DB) {
 	}
 	return db
 }
+
+func OpenDataBase(username string, password string, url string, databaseName string) (db *gorm.DB) {
+	dsn := username + ":" + password + "@tcp(" + url + ")/" + databaseName + "?charset=utf8mb4&parseTime=True&loc=Local"
+	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	if err != nil {
+		panic("Failed to connect to database")
+	}
+	return db
+}

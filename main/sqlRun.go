@@ -17,6 +17,7 @@ func main() {
 	//}
 
 	// 文件去重
-	fileTools.RegularMatchFile()
+	//fileTools.RegularMatchFile()
 
+	fileTools.YamlScript()
 }
